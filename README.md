@@ -26,11 +26,9 @@ In the project directory, you can run:
 
 ### src开发目录
 
-- index.js 入口文件
-- App.js 登录之后的路由组件
-- routerMap.js 所有路由路径
----
-
++ index.js 入口文件
++ App.js 登录之后的路由组件
++ routerMap.js 所有路由路径
 + components文件夹
     + 公用组件，如布局，头部组件
 + pages文件夹

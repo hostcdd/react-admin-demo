@@ -6,7 +6,7 @@ import {Provider} from 'react-redux';
 import store from './store/index'
 import './index.css';
 import App from './App';
-import {mainRouter} from './routerMap'
+import {adminRouter,mainRouter} from './routerMap'
 import * as serviceWorker from './serviceWorker';
 
 
@@ -22,7 +22,7 @@ ReactDOM.render(
               return <Route key={item.path} {...item}/>
             })
           }
-          <Redirect to='/admin' from="/"/>
+          <Redirect to={adminRouter[0].path} from="/"/>
           <Redirect to='/404'/>
         </Switch>
     </Router>

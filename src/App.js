@@ -19,7 +19,7 @@ function App({match}) {
              })
           }
 
-          <Redirect to={adminRouter[0].path} from="/admin"/>
+          {/* <Redirect to={adminRouter[0].path} from="/admin"/> */}
           <Redirect to='/404'/>
         </Switch>
     </Layout>
