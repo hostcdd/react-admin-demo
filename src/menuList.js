@@ -1,0 +1,20 @@
+export  const menuList = [
+    {
+        key:1,
+        title:'商品菜单',
+        icon:'',
+        children:[
+            {url:'/admin/list',name:'商品列表',icon:'',key:'1-1'},
+            {url:'/admin/editor',name:'商品列详情',icon:'',key:'1-2'},
+        ]
+    },
+    {
+        key:2,
+        title:'权限菜单',
+        icon:'',
+        children:[
+            {url:'/admin/1',name:'角色配置',icon:'',key:'2-1'},
+            {url:'/admin/2',name:'菜单配置',icon:'',key:'2-2'},
+        ]
+    },
+]

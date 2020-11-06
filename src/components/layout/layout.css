@@ -1,0 +1,11 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo{
+    background: url('../../images/fn_logo.png') no-repeat center 5px;
+    width: 150px;
+    height: 64px;
+    background-size: 46%;
+}
