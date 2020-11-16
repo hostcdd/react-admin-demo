@@ -13,7 +13,7 @@ export  const menuList = [
         title:'权限菜单',
         icon:'',
         children:[
-            {url:'/admin/1',name:'角色配置',icon:'',key:'2-1'},
+            {url:'/admin/User',name:'用户管理',icon:'',key:'2-1'},
             {url:'/admin/2',name:'菜单配置',icon:'',key:'2-2'},
         ]
     },

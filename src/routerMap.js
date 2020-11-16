@@ -3,6 +3,8 @@ import Login from './pages/Login';
 import Notfind from './pages/Notfind';
 import List from './pages/admin/products/List';
 import Editor from './pages/admin/products/Editor';
+import User from './pages/admin/authoritycontrol/userControl/User';
+
 
 
 
@@ -19,4 +21,6 @@ export const mainRouter = [
   export const adminRouter = [
     { path: "/admin/list", name: "List", component: List },
     { path: "/admin/editor", name: "Editor", component: Editor },
+    { path: "/admin/User", name: "User", component: User },
+    
   ]

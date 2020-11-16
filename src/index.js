@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom';
 import { HashRouter as Router, Route, Switch ,Redirect} from "react-router-dom";   //哈希模式
 import {Provider} from 'react-redux';
 import store from './store/index'
-import './index.css';
 import App from './App';
 import {adminRouter,mainRouter} from './routerMap'
 import * as serviceWorker from './serviceWorker';
