@@ -39,7 +39,7 @@ router.get("/getUserList",function(req,res,next){
   //登录接口
   router.get("/login",function(req,res,next){
       const sql = user.queryName
-    connection.query(sql,req.query.userName,function(err,rows){
+    connection.query(sql,[req.query.userName,req.query.password],function(err,rows){
         if(err){
             res.send({
                 status: 400,
