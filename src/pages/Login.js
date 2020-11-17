@@ -6,16 +6,14 @@ import { connect } from 'react-redux';
 import store from '../store/index'
 import {setUser} from '../store/Action'
 import { withRouter } from "react-router-dom";
-import {get,post} from '../utils/fetch'
+import {requst} from '../utils/fetch'
 
 
 function Login(props) {
     const onFinish = (values) => {
         console.log('Received values of form: ', values);
-        // server.axios('get','http://localhost:3000/userList/login',{userName:values.userName}).then(res => {
-
-        // })
-        get('http://localhost:3000/userList/login',{userName:values.userName,password:values.password}).then(res => {
+      
+        requst.get('http://localhost:3000/userList/login',{userName:values.userName,password:values.password}).then(res => {
             if(res.data.status == 200){
                 message.success('登录成功')
                 setToken(values.password)

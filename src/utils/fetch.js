@@ -3,7 +3,6 @@ import Qs from 'qs'
 
 // axios 配置
 axios.defaults.timeout = 2000;
-
 axios.defaults.baseURL = process.env.NODE_ENV === 'production' ? '' : 'http://10.16.10.18:8500/fns'
 
 
@@ -57,9 +56,8 @@ axios.interceptors.response.use(
   }
 );
 
-
 let base = ''
-export const post = (url, params) => {
+const post = (url, params) => {
   return axios({
     method: 'post',
     url: `${base}${url}`,
@@ -73,8 +71,7 @@ export const post = (url, params) => {
   });
 }
 
-
-export const get = (url, params) => {
+const get = (url, params) => {
   return axios({
     method: 'get',
     url: `${base}${url}`,
@@ -87,5 +84,7 @@ export const get = (url, params) => {
     }
   });
 }
+
+export let requst = {get,post}
 
 
