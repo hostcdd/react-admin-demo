@@ -38,3 +38,15 @@ In the project directory, you can run:
 + utils文件夹
     + 工具相关的，如是否登录验证，请求封装，环境配置
 
+
+### serve文件夹后台目录
+`
+express+mysql
+`
++ config 数据库配置和操作
++ public静态资源 例如：js,images,css...
++ routes 路由操作，由于使用前后端分离，只提供接口，如果需要页面渲染在views文件夹
++ views页面文件，暂时不用
++ app.js启动入门文件 
+    + node app.js
+

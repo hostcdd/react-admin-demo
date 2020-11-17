@@ -1,5 +1,5 @@
 import axios from 'axios';
-import envconfig from './envconfig';
+import envConfig from './envConfig';
 export default class Server {
     axios(method, url, params){
       return new Promise((resolve, reject) => {
@@ -7,7 +7,7 @@ export default class Server {
         let _option = {
           method,
           url,
-          baseURL: envconfig.baseURL,
+          baseURL: envConfig.baseURL,
           timeout: 30000,
           params: null,
           data: null,
