@@ -7,17 +7,17 @@ axios.defaults.baseURL = process.env.NODE_ENV === 'production' ? '' : 'http://10
 
 
 // http request 拦截器
-// axios.interceptors.request.use(
-//     config => {
-//         if (localStorage.getItem('token')) {
-//             config.headers.Authorization =  `Bearer ${localStorage.getItem('token')}`;
-//         }
-//         return config;
-//     },
-//     err => {
-//         alert('请求超时')
-//         return Promise.reject(err);
-//     });
+axios.interceptors.request.use(
+    config => {
+        if (localStorage.getItem('token')) {
+            config.headers.Authorization =  `token=${localStorage.getItem('token')}`;
+        }
+        return config;
+    },
+    err => {
+        alert('请求超时')
+        return Promise.reject(err);
+});
 
 // // http response 拦截器
 axios.interceptors.response.use(
@@ -65,9 +65,9 @@ const post = (url, params) => {
     transformRequest: [function (data) {
       return Qs.stringify(data,  {allowDots: true})
     }],
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded'
-    }
+    // headers: {
+    //   'Content-Type': 'application/x-www-form-urlencoded'
+    // }
   });
 }
 
@@ -79,9 +79,9 @@ const get = (url, params) => {
     paramsSerializer: function(params) {
       return Qs.stringify(params, {arrayFormat: 'repeat'})
     },
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded'
-    }
+    // headers: {
+    //   'Content-Type': 'application/x-www-form-urlencoded'
+    // }
   });
 }
 

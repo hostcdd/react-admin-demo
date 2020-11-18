@@ -8,22 +8,22 @@ import {setUser} from '../store/Action'
 import { withRouter } from "react-router-dom";
 import {requst} from '../utils/fetch'
 
-
-function Login(props) {
-    const onFinish = (values) => {
+ function Login(props) {
+    const onFinish = async (values) => {
         console.log('Received values of form: ', values);
-      
-        requst.get('http://localhost:3000/userList/login',{userName:values.userName,password:values.password}).then(res => {
+        var result = await requst.get('http://localhost:3000/userList/login',{userName:values.userName,password:values.password}).then(res => {
             if(res.data.status == 200){
-                message.success('登录成功')
-                setToken(values.password)
-                store.dispatch(setUser('登录用户'))
-                // 路由跳转
-                props.history.push("/admin/list");
+                return res.data
             }else{
                 message.error(res.data.msg)
+                throw {err:res.data.msg}
             }
         })
+        message.success(result.msg)
+        setToken(values.password)
+        store.dispatch(setUser('登录用户'))
+        // 路由跳转
+        props.history.push("/admin/list");
       }
     return (
         <Form
@@ -74,7 +74,7 @@ function Login(props) {
                 <Button type="primary" htmlType="submit" className="login-form-button">
                登录
                 </Button>
-                或者 <a href="">注册</a>
+                或者 <a href="#/signin">注册</a>
             </Form.Item>
         </Form>
     )
