@@ -11,7 +11,7 @@ import {requst} from '../utils/fetch'
  function Login(props) {
     const onFinish = async (values) => {
         console.log('Received values of form: ', values);
-        var result = await requst.get('http://localhost:3000/userList/login',{userName:values.userName,password:values.password}).then(res => {
+        var result = await requst.get('/userList/login',{userName:values.userName,password:values.password}).then(res => {
             if(res.data.status == 200){
                 return res.data
             }else{

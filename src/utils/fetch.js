@@ -3,7 +3,7 @@ import Qs from 'qs'
 
 // axios 配置
 axios.defaults.timeout = 2000;
-axios.defaults.baseURL = process.env.NODE_ENV === 'production' ? '' : 'http://10.16.10.18:8500/fns'
+axios.defaults.baseURL = process.env.NODE_ENV === 'production' ? '' : 'http://localhost:3000'
 
 
 // http request 拦截器

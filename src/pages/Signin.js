@@ -8,7 +8,7 @@ import {requst} from '../utils/fetch'
 function Signin(props) {
     const onFinish = async (values) => {
         console.log('Received values of form: ', values);
-        var result = await requst.post('http://localhost:3000/userList/signin',{userName:values.userName,password:values.password}).then(res => {
+        var result = await requst.post('/userList/signin',{userName:values.userName,password:values.password}).then(res => {
             if(res.data.status == 200){
                 return res.data
             }else{
