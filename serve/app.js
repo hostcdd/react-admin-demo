@@ -29,7 +29,8 @@ app.all('*', function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
 
-  res.header("Access-Control-Allow-Headers", "*");  //不这样设置前端axios自定义请求头过不来
+  res.header("Access-Control-Allow-Headers", "*");  //不这样设置前端axios自定义请求头过不来 
+  // response.setHeader("Access-Control-Allow-Headers", "Content-Type,Accept,X-Requested-With,前端自定义的字段名称")
   // res.header("Access-Control-Allow-Headers", "X-Requested-With");
   // res.header('Access-Control-Allow-Headers', 'Content-Type', "application/json;charset=utf-8");
   next();
